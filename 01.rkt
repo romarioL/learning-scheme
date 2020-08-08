@@ -124,7 +124,7 @@
           rpl
           list)))
 
-(define (execute-generic TEST n)
+(define (execute-generic TEST  n)
  (TEST n))
 
 (define execute-display ( replace execute-generic 'TEST 'display))
@@ -141,7 +141,7 @@
 (execute-method methods 0)
 (execute-method methods 2 10)
 (execute-method methods 0)
-(execute-display display 1)
+(execute-display  1)
 
 
 
