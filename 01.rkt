@@ -114,6 +114,8 @@
             (if (equal? n null)
                 ((method))
                 ((method) n))))
+
+
           
           
 
@@ -122,6 +124,8 @@
 (execute-method  methods 3 5)
 (execute-method methods 0)
 (execute-method methods 1 6)
+(execute-method methods 0)
+(execute-method methods 2 10)
 (execute-method methods 0)
 
 
