@@ -109,9 +109,9 @@
     (list get-counter add mult div)))
 
 (define execute-method
-        (lambda (list-method index [n 0])
+        (lambda (list-method index [n null])
           (define method (list-ref list-method index))
-            (if (= n 0)
+            (if (equal? n null)
                 ((method))
                 ((method) n))))
           
