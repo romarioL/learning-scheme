@@ -115,6 +115,20 @@
                 ((method))
                 ((method) n))))
 
+(define (replace list find rpl)
+  (if (pair? list)
+      (cons
+       (replace (car list) find rpl)
+       (replace (cdr list) find rpl))
+      (if (equal?  find list)
+          rpl
+          list)))
+
+(define (execute-generic TEST n)
+ (TEST n))
+
+(define execute-display ( replace execute-generic 'TEST 'display))
+
 
           
           
@@ -127,6 +141,9 @@
 (execute-method methods 0)
 (execute-method methods 2 10)
 (execute-method methods 0)
+(execute-display display 1)
+
+
 
 
 
