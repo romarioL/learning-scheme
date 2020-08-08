@@ -127,6 +127,25 @@
 (define (execute-generic TEST  n)
  (TEST n))
 
+(define  person-class
+  (lambda (name age)
+    (define Name name)
+    (define Age age)
+    (lambda (method)
+      (cond [ (eq? method "setAge")
+              (lambda(age)
+                (set! Age age))]
+            [(eq? method "getAge")
+             (lambda()
+                Age)]
+            [(eq? method "setName")
+             (lambda(name)
+                (set! Name name))]
+            [(eq? method "getName")
+             (lambda()
+                Name)]
+            [else (error "Wrong method name")]))))
+
 (define execute-display ( replace execute-generic 'TEST 'display))
 
 
@@ -141,7 +160,7 @@
 (execute-method methods 0)
 (execute-method methods 2 10)
 (execute-method methods 0)
-(execute-display  1)
+(execute-display display 1)
 
 
 
