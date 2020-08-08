@@ -1,4 +1,5 @@
 #lang racket
+
 ( define multiply
    (lambda (x mult)
      (* x mult)))
@@ -108,23 +109,13 @@
       (count "div"))
     (list get-counter add mult div)))
 
-(define execute-method
-        (lambda (list-method index [n 0])
-          (define method (list-ref list-method index))
-            (if (= n 0)
-                ((method))
-                ((method) n))))
-          
-          
+(define (execute-method n list-method index)
+  (define method (list-ref list-method index))
+    ((method) n))
 
 (define count (create-counter 5 counter))
 (define methods (count))
-(execute-method  methods 3 5)
-(execute-method methods 0)
-(execute-method methods 1 6)
-(execute-method methods 0)
-
-
+(execute-method 5 methods 3)
 
 
  
