@@ -51,6 +51,7 @@
         (car (cdr list))
         ( middle-of-any-list (cdr list)))))
 
+
 (define (any-list-any-doing list fn)
     (fn list))
 
@@ -161,6 +162,9 @@
 (execute-method methods 2 10)
 (execute-method methods 0)
 (execute-display display 1)
+
+
+
 
 
 
